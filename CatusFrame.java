@@ -472,6 +472,7 @@ public class CatusFrame extends JFrame
     final JLabel equip_ilvl_lbl;
     final JButton equip_exportSimc_btn;
     final JButton equip_screenshot_btn;
+    final JButton simc_import_btn;
     final UIComboBox<Config2> equip_config_combo;
     final LockableActionListener equip_config_combo_al;
     final UIComboBox<NamedRunnable> equip_clear_combo;
@@ -3353,6 +3354,13 @@ public class CatusFrame extends JFrame
                 CatusFrame.this.screenshot(CatusFrame.this.equipGrid, "Gear", (ae.getModifiers() & 0x8) > 0);
             }
         });
+        
+        (this.simc_import_btn = UI.makeButton("Amongus")).addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(final ActionEvent ae) {
+                final DialogText amongus_text_window = new DialogText(CatusFrame.this, "test", "test");
+            }
+        });
         this.equipGrid = _makePanel();
         (this.scaled_label = new JLabel()).setIcon(this.api.getIconImage(InterfaceIcon.SCALED.slug, API.IconSize.SMALL));
         this.scaled_label.setFont(CatusFrame.boldFont);
@@ -3461,6 +3469,7 @@ public class CatusFrame extends JFrame
         top.add(this.equip_edit_btn);
         top.add(this.equip_exportSimc_btn);
         top.add(this.equip_screenshot_btn);
+        top.add(this.simc_import_btn);
         top.spacer();
         top.add(this.equip_autoFill_btn);
         top.add(this.equip_itemLevel_combo);
